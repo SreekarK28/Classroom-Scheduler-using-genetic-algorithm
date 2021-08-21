@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<form method="post">
+	{% csrf_token %}
+	<fieldset>
+		<a href="{% url 'addroom' %}"><h1 class="tablink" onclick="openPage('add')" id="add_to_edit">Add Rooms</h1></a>
+		<a href="{% url 'editrooms' %}"><h1 class="tablink" onclick="openPage('edit')" id="link_to_edit">Edit Rooms</h1></a>
+		<div class="tabcontent" id="new">
+			{{ form.as_p }}
+		<input type="submit" value="Submit" class="submit">
+		</div>
+	</fieldset>
+</form>
+<div class="img1">
+	<img src="{% static 'img/bench3.png' %}">
+</div>
+<div class="img2">
+	<img src="{% static 'img/bench2.png' %}">
+</div>
+{% endblock %}
